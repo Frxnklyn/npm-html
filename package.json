@@ -1,0 +1,47 @@
+{
+  "name": "@frxnklyn/html",
+  "version": "0.1.0",
+  "description": "Filesystem-independent HTML data types and builders for TypeScript.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/html.test.mjs",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "html",
+    "datatype",
+    "builder"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frxnklyn/npm-html.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Frxnklyn/npm-html/issues"
+  },
+  "homepage": "https://github.com/Frxnklyn/npm-html#readme",
+  "dependencies": {
+    "@frxnklyn/datatypes": "github:Frxnklyn/npm-datatypes"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
